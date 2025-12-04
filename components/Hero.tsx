@@ -32,8 +32,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.7 }}
           >
-            Kinoähnliche Website-Experience mit echten Referenzen, filmischen Videos und klaren
-            Leistungsversprechen – optimiert für Sichtbarkeit, Anfragen und Vertrauen.
+            Klare Facility-Services mit nachweisbarer Qualität: Gebäudereinigung, technischer Service
+            und Außenanlagenpflege mit kurzen Reaktionszeiten.
           </motion.p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -82,10 +82,9 @@ export default function Hero() {
             Real Footage
           </div>
           <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/15 bg-black/30 p-4 backdrop-blur-xl">
-            <p className="text-sm font-semibold text-slate-50">Premium Finish</p>
+            <p className="text-sm font-semibold text-slate-50">Saubere Ergebnisse</p>
             <p className="text-xs text-slate-200/80">
-              Modernes Storytelling mit Apple-inspirierten Animationen, optimiert für schnelle
-              Ladezeiten.
+              Reinigungs- und Serviceteams für Wohnanlagen, Offices und Gewerbe in Rhein-Main.
             </p>
           </div>
         </div>
