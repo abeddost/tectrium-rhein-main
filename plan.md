@@ -1,141 +1,76 @@
-# Tectrium Ultra-Modern Website Redesign
+# Tectrium Rhein-Main — Premium Apple-Style Website Plan
 
-## Overview
-Transform the Tectrium Rhein-Main website into a premium, cinematic experience with Next.js, Framer Motion animations, video backgrounds, and Apple-inspired design aesthetics.
+## Goal
+Create a cinematic, premium, Apple-inspired single-page site for Tectrium Rhein-Main with smooth gradients, glassmorphism, micro-interactions, and atmospheric video layers using the existing public videos.
 
-## Technology Stack
-- **Framework**: Next.js 14+ (App Router)
-- **Styling**: Tailwind CSS with custom gradients
-- **Animations**: Framer Motion
-- **Video Integration**: HTML5 video elements with optimized loading
-- **Typography**: System fonts (SF Pro-like) or Inter/Geist
+## Tech Stack
+- Next.js 14 (App Router) + TypeScript
+- Tailwind CSS (custom theme: gradients, glass, animations)
+- Framer Motion for scroll reveals, sliders, magnetic hover
+- Lightweight video handling with HTML5 video (blurred/low-opacity overlays)
+- Optional dark mode toggle via CSS variables and `data-theme`
 
-## Project Structure
-```
-├── app/
-│   ├── layout.tsx (root layout with gradient background)
-│   ├── page.tsx (home page)
-│   └── globals.css (global styles, gradients, animations)
-├── components/
-│   ├── Hero.tsx (full-width video background hero)
-│   ├── About.tsx (two-column layout with animations)
-│   ├── Services.tsx (animated service cards)
-│   ├── Gallery.tsx (video/image showcase with parallax)
-│   ├── Contact.tsx (minimal form with gradient accents)
-│   ├── Footer.tsx (ultra-simple footer)
-│   ├── Navigation.tsx (smooth scroll navigation)
-│   └── VideoBackground.tsx (reusable video component)
-├── public/
-│   └── [4 existing video files]
-└── package.json
-```
+## Global Experience
+- Light-first palette with aurora gradients; gentle animated background
+- Glass cards, soft shadows, micro-shimmer accents
+- Page-load staggered fade/slide; parallax on hero/gallery videos
+- Smooth scrolling, scroll-based section reveals; hover glows/magnetic buttons
+- Responsive across breakpoints; performance-aware (lazy video/image loading)
 
-## Implementation Details
+## Page Structure
+1) **Hero**  
+   - Full-screen, animated gradient canvas + low-opacity blurred video layer (from `public` hero video)  
+   - Bold Apple-style headline & value subheadline  
+   - Primary CTA (Kontakt/Termin), secondary CTA (Leistungen) with magnetic hover  
+   - Floating shapes/particles and subtle parallax
 
-### 1. Next.js Setup & Configuration
-- Initialize Next.js project with TypeScript
-- Configure Tailwind CSS with custom gradient utilities
-- Set up Framer Motion
-- Configure video optimization
+2) **About / Mission**  
+   - Glass container over gradient; scroll reveal copy  
+   - Mission/value cards with soft glow hover; optional mini ambient video chip  
+   - Timeline-style highlights (founded, response time, coverage)
 
-### 2. Global Styles & Theme (`app/globals.css`)
-- Light gradient background (white → soft pastel)
-- Premium typography system
-- Custom animation keyframes
-- Glassmorphism utilities
-- Smooth scroll behavior
+3) **Services**  
+   - 3–6 service cards (Hausreinigung, Technischer Service, Aussenanlagen, Winterdienst, Tiefgaragenreinigung, Service für HV und ET, Renovierungen)  
+   - Gradient borders, depth shadows; iconography  
+   - Staggered entrance + hover lift/shimmer
 
-### 3. Hero Section (`components/Hero.tsx`)
-- Full-width video background using one of the public videos
-- Large animated headline with text reveal (Framer Motion)
-- Subheadline with soft fade-in
-- Minimal CTA button with hover micro-interactions
-- Floating motion effects
-- Gradient overlay on video
+4) **Why Choose Us / Value**  
+   - Split layout: text with animated checkmarks + side visual (parallax video or gradient image)  
+   - Bullet proof-points; trust cues (response times, transparency)
 
-### 4. About Section (`components/About.tsx`)
-- Two-column layout (text + visual)
-- Preserve existing company description
-- Light gradient behind icons/elements
-- Text animations on scroll (staggered)
-- Optional small looping ambient video embedded
-- Fade-in effects on scroll
+5) **Gallery / Showcase**  
+   - Grid/masonry of video tiles (remaining public videos) with hover zoom/reflection  
+   - Lightbox modal for playback; lazy loading; parallax on scroll
 
-### 5. Services Section (`components/Services.tsx`)
-- Modern service cards with animated icons
-- Preserve all existing services:
-  - Hausreinigung
-  - Technischer Service
-  - Aussenanlagen
-  - Winterdienst
-  - Tiefgaragenreinigung
-  - Service für HV und ET
-  - Renovierungen
-- Cards fade in and rise on scroll
-- Soft glow hover effect
-- Gradient shimmer on hover
+6) **Testimonials**  
+   - Glass cards, auto-slide carousel; round avatars with gradient rings  
+   - Soft fades between slides
 
-### 6. Gallery/Projects Section (`components/Gallery.tsx`)
-- Large video showcase using remaining videos
-- Parallax or slow zoom effects
-- Smooth hover transitions
-- Grid or carousel layout
+7) **Contact / CTA**  
+   - Gradient block with strong CTA; animated button  
+   - Elegant contact form with focus/hover feedback  
+   - Contact details and map embed
 
-### 7. Contact Section (`components/Contact.tsx`)
-- Preserve contact information:
-  - Harald Ganick
-  - Tel. +49 (0) 177 343 00 15
-  - Email
-  - Address: An der Brunnenstube 27-31, 55120 Mainz
-- Minimal form with gradient accents
-- Animated heading
-- Map integration with soft shadows
-- Smooth form field animations
+8) **Footer**  
+   - Minimal Apple-like footer with thin gradient divider  
+   - Social icons hover glow; legal links
 
-### 8. Footer (`components/Footer.tsx`)
-- Ultra-simple & elegant design
-- Clean spacing, thin separators
-- Navigation links
-- Contact info
-- Legal links (Datenschutz, Impressum)
+## Animations & Interactions
+- Page load: staggered fade/slide for hero headline, subhead, CTA  
+- Scroll reveals via Framer Motion `whileInView`  
+- Magnetic hover on primary CTA; glow on buttons/cards  
+- Parallax on hero/galleries; gradient background slow shift  
+- Hover zoom + reflection on gallery tiles; testimonial auto-slider  
+- Dark-mode toggle switches CSS variables
 
-### 9. Navigation (`components/Navigation.tsx`)
-- Smooth scroll navigation
-- Sticky header with glassmorphism
-- Animated menu items
-- Mobile-responsive hamburger menu
+## Asset Usage
+- Use `Diy, Apartment, Roller, Drill by Stockbusters - Stock Footage.mp4` as hero atmospheric video (blurred/opac ~10–15%)  
+- Use `Royalty Stock Footage and Video Footage_13/14/15.mp4` across gallery/value sections  
+- Provide fallback poster SVG for videos
 
-### 10. Video Component (`components/VideoBackground.tsx`)
-- Reusable video background component
-- Autoplay, loop, muted
-- Rounded edges or full-width cinematic style
-- Gentle parallax or slow zoom
-- Optimized loading
-
-## Animation Strategy
-- **Text Reveals**: Framer Motion `initial={{ opacity: 0, y: 20 }}` → `animate={{ opacity: 1, y: 0 }}`
-- **Scroll Animations**: `useInView` hook with stagger effects
-- **Hover Effects**: Scale transforms + glow shadows
-- **Parallax**: CSS transforms with scroll listeners
-- **Gradient Shimmer**: CSS keyframe animations
-- **Section Transitions**: Smooth fade and slide effects
-
-## Responsive Design
-- Mobile-first approach
-- Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
-- Touch-friendly interactions
-- Optimized video loading for mobile
-
-## Content Preservation
-- All existing German text content
-- All service descriptions
-- Complete contact information
-- Company history and values
-- Navigation structure
-
-## Video Integration Strategy
-- **Hero**: Use "Diy, Apartment, Roller, Drill" video as main background
-- **Gallery**: Use "Royalty Stock Footage 13, 14, 15" for showcase
-- All videos: autoplay, loop, muted, optimized formats
-- Fallback images for slow connections
-
+## Implementation Steps
+1. Scaffold Next.js app with Tailwind, Framer Motion; configure fonts, theme tokens, gradients, animations, and dark-mode variables.  
+2. Build shared components: Navigation (sticky glass), Layout, VideoBackground (parallax/blur), Section shells, Buttons (magnetic), ThemeToggle.  
+3. Implement sections (Hero → Footer) with required animations, services content, contact info, and video integrations.  
+4. Add gallery lightbox and testimonial slider; ensure lazy loading and accessibility.  
+5. Polish responsiveness, hover states, motion tuning; run lint/build checks.

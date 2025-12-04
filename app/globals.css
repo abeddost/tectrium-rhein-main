@@ -4,19 +4,13 @@
 
 :root {
   color-scheme: light;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: linear-gradient(135deg, #f8fbff 0%, #f2f7ff 100%);
-  background-image: var(--aurora-layer);
-}
-
-:root {
-  --aurora-layer: radial-gradient(
+  --bg: #f6f9ff;
+  --fg: #0b1627;
+  --card: rgba(255, 255, 255, 0.75);
+  --muted: #475569;
+  --border: rgba(255, 255, 255, 0.6);
+  --glow: 0 20px 60px rgba(90, 164, 255, 0.35);
+  --aurora: radial-gradient(
         circle at 15% 20%,
         rgba(90, 164, 255, 0.16),
         transparent 22%
@@ -31,6 +25,80 @@ body {
         rgba(255, 220, 150, 0.18),
         transparent 26%
       );
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --fg: #e2e8f0;
+  --card: rgba(15, 23, 42, 0.7);
+  --muted: #cbd5e1;
+  --border: rgba(255, 255, 255, 0.08);
+  --aurora: radial-gradient(
+        circle at 15% 20%,
+        rgba(63, 123, 255, 0.25),
+        transparent 22%
+      ),
+      radial-gradient(
+        circle at 80% 0%,
+        rgba(72, 255, 197, 0.18),
+        transparent 18%
+      ),
+      radial-gradient(
+        circle at 50% 80%,
+        rgba(255, 196, 120, 0.18),
+        transparent 26%
+      );
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #f8fbff 0%, #f2f6ff 100%);
+  background-image: var(--aurora);
+  animation: gradient 16s ease infinite;
+  background-size: 140% 140%;
+}
+
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  box-shadow: var(--glow);
+}
+
+.card {
+  @apply rounded-3xl p-6;
+  background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0.15) 55%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 2.8s ease-in-out infinite;
 }
 
 * {
@@ -50,32 +118,4 @@ body {
 *::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #5aa4ff, #2f7dff);
   border-radius: 999px;
-}
-
-.glass {
-  @apply bg-white/60 backdrop-blur-xl border border-white/50 shadow-glow;
-}
-
-.card {
-  @apply rounded-3xl p-6 bg-white/70 backdrop-blur-lg border border-white/60 shadow-glow-soft;
-}
-
-.shimmer {
-  position: relative;
-  overflow: hidden;
-}
-
-.shimmer::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.35) 45%,
-    rgba(255, 255, 255, 0.25) 55%,
-    transparent 100%
-  );
-  transform: translateX(-100%);
-  animation: shimmer 2.8s ease-in-out infinite;
 }

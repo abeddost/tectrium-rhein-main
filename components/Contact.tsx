@@ -1,48 +1,45 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MagneticButton } from "./MagneticButton";
 
 export function Contact() {
   return (
-    <section id="contact" className="px-6 py-20">
-      <div className="mx-auto max-w-6xl space-y-8">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h2 className="text-3xl font-semibold text-ink">Kontakt</h2>
-            <p className="text-base text-slate-700">
-              Direkt, klar und persönlich. Wir freuen uns auf Ihre Anfrage.
-            </p>
-          </div>
-          <div className="rounded-full bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 shadow-glow-soft">
-            Reaktionszeit &lt; 24h
-          </div>
-        </div>
+    <section id="contact" className="relative px-6 py-20">
+      <div className="absolute inset-0 gradient-bg opacity-70" />
+      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-10 shadow-glow backdrop-blur dark:border-white/10 dark:bg-slate-900/80">
         <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
           <motion.form
-            className="card space-y-4"
+            className="space-y-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.7 }}
           >
+            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-700 dark:text-slate-200">
+              Kontakt aufnehmen
+            </div>
+            <h3 className="text-3xl font-semibold text-ink dark:text-white">
+              Lassen Sie uns über Ihr Objekt sprechen.
+            </h3>
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="space-y-2">
-                <span className="text-sm font-semibold text-slate-700">
+                <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
                   Ihr Name
                 </span>
                 <input
-                  className="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm shadow-inner outline-none transition focus:border-accent-500 focus:shadow-glow-soft"
+                  className="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm shadow-inner outline-none transition focus:border-accent-500 focus:shadow-glow-soft dark:border-white/10 dark:bg-white/10 dark:text-white"
                   placeholder="Vor- und Nachname"
                   type="text"
                   name="name"
                 />
               </label>
               <label className="space-y-2">
-                <span className="text-sm font-semibold text-slate-700">
+                <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
                   E-Mail
                 </span>
                 <input
-                  className="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm shadow-inner outline-none transition focus:border-accent-500 focus:shadow-glow-soft"
+                  className="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm shadow-inner outline-none transition focus:border-accent-500 focus:shadow-glow-soft dark:border-white/10 dark:bg-white/10 dark:text-white"
                   placeholder="Ihre E-Mail"
                   type="email"
                   name="email"
@@ -50,22 +47,19 @@ export function Contact() {
               </label>
             </div>
             <label className="space-y-2">
-              <span className="text-sm font-semibold text-slate-700">
+              <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
                 Anliegen
               </span>
               <textarea
-                className="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm shadow-inner outline-none transition focus:border-accent-500 focus:shadow-glow-soft"
+                className="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm shadow-inner outline-none transition focus:border-accent-500 focus:shadow-glow-soft dark:border-white/10 dark:bg-white/10 dark:text-white"
                 placeholder="Wobei dürfen wir unterstützen?"
                 rows={4}
                 name="message"
               />
             </label>
-            <button
-              type="submit"
-              className="w-full rounded-full bg-gradient-to-r from-accent-500 to-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:translate-y-[-2px]"
-            >
+            <MagneticButton className="w-full justify-center" variant="primary">
               Nachricht senden
-            </button>
+            </MagneticButton>
           </motion.form>
           <motion.div
             className="space-y-4"
@@ -75,14 +69,16 @@ export function Contact() {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             <div className="card space-y-3">
-              <div className="text-sm font-semibold text-ink">
+              <div className="text-sm font-semibold text-ink dark:text-white">
                 Harald Ganick
               </div>
-              <div className="text-sm text-slate-700">
+              <div className="text-sm text-slate-700 dark:text-slate-200">
                 Tel. +49 (0) 177 343 00 15
               </div>
-              <div className="text-sm text-slate-700">info@tectrium.de</div>
-              <div className="text-sm text-slate-700">
+              <div className="text-sm text-slate-700 dark:text-slate-200">
+                info@tectrium.de
+              </div>
+              <div className="text-sm text-slate-700 dark:text-slate-200">
                 An der Brunnenstube 27-31
                 <br />
                 55120 Mainz

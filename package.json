@@ -1,18 +1,21 @@
 {
-  "name": "tectrium",
+  "name": "tectrium-rhein-main",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --check ."
   },
   "dependencies": {
     "framer-motion": "^11.2.6",
     "next": "14.2.4",
+    "next-sitemap": "^4.2.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-use": "^17.5.1"
   },
   "devDependencies": {
     "@types/node": "^22.5.4",
