@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #f8fbff 0%, #f2f7ff 100%);
+  background-image: var(--aurora-layer);
+}
+
+:root {
+  --aurora-layer: radial-gradient(
+        circle at 15% 20%,
+        rgba(90, 164, 255, 0.16),
+        transparent 22%
+      ),
+      radial-gradient(
+        circle at 80% 0%,
+        rgba(125, 255, 214, 0.14),
+        transparent 18%
+      ),
+      radial-gradient(
+        circle at 50% 80%,
+        rgba(255, 220, 150, 0.18),
+        transparent 26%
+      );
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 23, 42, 0.25) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #5aa4ff, #2f7dff);
+  border-radius: 999px;
+}
+
+.glass {
+  @apply bg-white/60 backdrop-blur-xl border border-white/50 shadow-glow;
+}
+
+.card {
+  @apply rounded-3xl p-6 bg-white/70 backdrop-blur-lg border border-white/60 shadow-glow-soft;
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0.25) 55%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 2.8s ease-in-out infinite;
+}
