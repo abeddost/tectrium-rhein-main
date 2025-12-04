@@ -120,10 +120,15 @@ export default function Contact() {
       </div>
 
       <div className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-4 shadow-soft">
-        <div className="h-72 w-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900">
-          <div className="flex h-full items-center justify-center text-center text-slate-200/70">
-            Interaktive Karte • Adresse: An der Brunnenstube 27-31, 55120 Mainz
-          </div>
+        <div className="h-72 w-full overflow-hidden rounded-2xl border border-white/10">
+          <iframe
+            title="Tectrium Standort"
+            src="https://www.google.com/maps?q=An+der+Brunnenstube+27-31,+55120+Mainz&output=embed"
+            className="h-full w-full"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
         </div>
       </div>
     </section>

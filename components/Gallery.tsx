@@ -1,23 +1,24 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import VideoBackground from "./VideoBackground";
 
 const showcases = [
   {
     title: "Office Deep Clean",
-    copy: "Glas, Metall und Naturstein mit glanzkonstanter Pflege. Perfekt für repräsentative Eingänge.",
-    src: "/Royalty Stock Footage and Video Footage_14.mp4"
+    copy:
+      "Glas, Metall und Naturstein mit glanzkonstanter Pflege. Perfekt für repräsentative Eingänge.",
+    src: "/stock-gallery-1.jpg"
   },
   {
     title: "Außenanlagen & Wege",
     copy: "Sichere, gepflegte Außenflächen mit saisonalen Plänen – auch für hohe Besucherfrequenz.",
-    src: "/Royalty Stock Footage and Video Footage_15.mp4"
+    src: "/stock-gallery-2.jpg"
   },
   {
     title: "Technik & Übergaben",
     copy: "Technischer Service mit Übergabeprotokollen, Checklisten und dokumentierten Instandhaltungen.",
-    src: "/Royalty Stock Footage and Video Footage_13.mp4"
+    src: "/stock-gallery-3.jpg"
   }
 ];
 
@@ -48,7 +49,9 @@ export default function Gallery() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: 0.06 * index }}
           >
-            <VideoBackground src={item.src} className="h-full min-h-[260px]" />
+            <div className="relative h-full min-h-[260px]">
+              <Image src={item.src} alt={item.title} fill className="object-cover" />
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition group-hover:opacity-75" />
             <div className="absolute inset-x-0 bottom-0 p-5">
               <p className="text-sm uppercase tracking-[0.14em] text-slate-200/70">Case Study</p>

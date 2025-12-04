@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import VideoBackground from "./VideoBackground";
 
 const stats = [
   { label: "Reaktionszeit", value: "< 4 Std." },
@@ -74,12 +74,15 @@ export default function Hero() {
         <div className="relative overflow-hidden rounded-l-3xl">
           <div className="blur-blob left-10 top-10 h-32 w-32 bg-cyan-400/40" />
           <div className="blur-blob right-10 top-16 h-32 w-32 bg-blue-500/35" />
-          <VideoBackground
-            src="/Diy, Apartment, Roller, Drill by Stockbusters - Stock Footage.mp4"
-            className="h-full min-h-[360px]"
-          />
-          <div className="absolute left-6 top-6 rounded-full bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-slate-100/80">
-            Real Footage
+          <div className="relative h-full min-h-[360px]">
+            <Image
+              src="/stock-hero.jpg"
+              alt="Gepflegter Empfangsbereich in einem modernen Gebäude"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="hero-overlay absolute inset-0" />
           </div>
           <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/15 bg-black/30 p-4 backdrop-blur-xl">
             <p className="text-sm font-semibold text-slate-50">Saubere Ergebnisse</p>

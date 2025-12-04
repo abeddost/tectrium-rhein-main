@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import VideoBackground from "./VideoBackground";
 
 const values = [
   { title: "Planbare Qualität", text: "Strenge QA-Prozesse, dokumentierte Abläufe und Live-Feedback für jede Immobilie." },
@@ -46,11 +46,14 @@ export default function About() {
           </div>
         </div>
 
-        <div className="relative">
-          <VideoBackground
-            src="/Royalty Stock Footage and Video Footage_13.mp4"
-            className="h-full min-h-[260px] shadow-soft"
+        <div className="relative h-full min-h-[260px] overflow-hidden rounded-3xl shadow-soft">
+          <Image
+            src="/stock-about.jpg"
+            alt="Team von Tectrium bei der Arbeit in einem Gebäude"
+            fill
+            className="object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-tr from-black/50 via-black/10 to-transparent" />
           <div className="absolute -left-6 -top-6 rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-xs uppercase tracking-[0.18em] text-slate-50/80">
             Rhein-Main Team
           </div>
